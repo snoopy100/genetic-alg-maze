@@ -1,4 +1,4 @@
-import java.util.Arrays;
+/* import java.util.Arrays;
 import java.util.Random;
 
 public class Chromosome {
@@ -29,3 +29,4 @@ public class Chromosome {
     // add stuff to calculate distance in game with game class
   }
 }
+*/

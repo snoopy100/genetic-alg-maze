@@ -1,4 +1,4 @@
-public class Algorithim {
+/* public class Algorithim {
   public static int POP_SIZE;
   public Algorithim(int popSize) {
     POP_SIZE = popSize;
@@ -29,3 +29,4 @@ public class Algorithim {
     // add radndom muattion
   }
 }
+*/

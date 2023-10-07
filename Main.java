@@ -1,8 +1,18 @@
-public class Main {
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+public class Main extends Application {
+  public void start(Stage stage) throws Exception {
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("/Maze.fxml"));
+    Parent root = loader.load();
+    Scene scene = new Scene(root);
+    stage.setScene(scene);
+    stage.show();
+  }
   public static void main(String[] args) {
-    Algorithim genetic-alg = new Algorithim(100);
-    // add alg class with evolve, muate, and crossover
-    // add Population class (i will copy and paste)
-    // add Chromsomse class (copy and paste, but chane to work with game)
+    launch(args);
   }
 }
