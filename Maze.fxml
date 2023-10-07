@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1"
-            style="-fx-background-color: red;" fx:controller="Controller">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: red;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+   <children>
+      <Rectangle fill="WHITE" height="40.0" layoutX="19.0" layoutY="332.0" stroke="WHITE" strokeType="INSIDE" width="264.0" fx:id="r1" />
+      <Rectangle fill="WHITE" height="79.0" layoutX="215.0" layoutY="257.0" stroke="WHITE" strokeType="INSIDE" width="68.0" fx:id="r2"/>
+      <Rectangle fill="WHITE" height="66.0" layoutX="280.0" layoutY="257.0" stroke="WHITE" strokeType="INSIDE" width="207.0" fx:id="r3"/>
+      <Rectangle fill="WHITE" height="174.0" layoutX="396.0" layoutY="83.0" stroke="WHITE" strokeType="INSIDE" width="91.0" fx:id="r4"/>
+      <Rectangle fill="WHITE" height="59.0" layoutX="256.0" layoutY="83.0" stroke="WHITE" strokeType="INSIDE" width="144.0" fx:id="r5"/>
+      <Rectangle fill="WHITE" height="66.0" layoutX="256.0" layoutY="17.0" stroke="WHITE" strokeType="INSIDE" width="91.0" fx:id="r6"/>
+      <Rectangle fill="BLACK" height="20" layoutX="20" layoutY="350" stroke="WHITE" strokeType="INSIDE" width="20" />
+   </children>
 </AnchorPane>

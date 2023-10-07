@@ -1,13 +1,15 @@
-/* import java.util.Arrays;
+import java.util.Arrays;
 
 public class Population {
   private Chromosome[] chromosomes;
-  public Population(int popSize) {
+  int genomeSize;
+  public Population(int popSize, int length) {
     chromosomes = new Chromosome[popSize];
+    genomeSize = length;
   }
   public Population initPopulation() {
     for (int i = 0; i < chromosomes.length; i++) {
-      chromosomes[i] = new Chromosome(Algorithim.SOLUTION.length).initChromosome();
+      chromosomes[i] = new Chromosome(genomeSize, 20, 350).initChromosome();
     }
     sortChromosomesByFitness();
     return this;
@@ -27,4 +29,3 @@ public class Population {
     return chromosomes;
   }
 }
-*/
