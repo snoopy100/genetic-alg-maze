@@ -1,3 +1,4 @@
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.shape.Rectangle;
 
@@ -41,14 +42,33 @@ public class Chromosome {
     return (int) square.square.getY();
   }
   public void display() throws IOException {
-    square.add(new FXMLLoader(getClass().getResource("/Maze.fxml")).getController());
-    for (Actions i: genes) {
-      switch (i) {
-        case LEFT -> x--;
-        case RIGHT -> x++;
-        case UP -> y--;
-        case DOWN -> y++;
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("/Maze.fxml"));
+    loader.load();
+    Controller controll = loader.getController();
+    square.add(controll);
+    while (square.isTouching()) {
+      for (Actions i: genes) {
+        switch (i) {
+          case LEFT:
+            square.x--;
+            square.square.setX(square.x);
+            break;
+          case RIGHT:
+            square.x++;
+            square.square.setX(square.x);
+            break;
+          case UP:
+            square.y--;
+            square.square.setY(square.y);
+            break;
+          case DOWN:
+            square.y++;
+            square.square.setY(square.y);
+            System.out.println("no");
+            break;
+          }
       }
     }
+    controll.anchorPane.getChildren().remove(square.id);
   }
 }

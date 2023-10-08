@@ -18,28 +18,8 @@ public class Main extends Application {
     stage.setScene(scene);
     stage.setTitle("AI solving maze");
     stage.show();
-
-    Algorithim alg = new Algorithim(15);
-    Population pop = new Population(15, Algorithim.length).initPopulation();
-    pop.sortChromosomesByFitness();
-    while (pop.getChromosomes()[0].calcFitness() < 331) {
-      for (int i = 0; i < 15; i++) {
-        pop.getChromosomes()[i].display();
-      }
-      pop = alg.evolvePopulation(pop);
-    }
   }
   public static void main(String[] args) throws IOException {
     launch(args);
-    /* code for running GA but it is not being run
-    Algorithim alg = new Algorithim(15);
-    Population pop = new Population(15, Algorithim.length).initPopulation();
-    pop.sortChromosomesByFitness();
-    while (pop.getChromosomes()[0].calcFitness() < 331) {
-      for (int i = 0; i < 15; i++) {
-        pop.getChromosomes()[i].display();
-      }
-      pop = alg.evolvePopulation(pop);
-    } */
   }
 }

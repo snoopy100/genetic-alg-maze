@@ -12,6 +12,7 @@
       <Rectangle fx:id="r4" fill="WHITE" height="174.0" layoutX="396.0" layoutY="83.0" stroke="WHITE" strokeType="INSIDE" width="91.0" />
       <Rectangle fx:id="r5" fill="WHITE" height="59.0" layoutX="256.0" layoutY="83.0" stroke="WHITE" strokeType="INSIDE" width="144.0" />
       <Rectangle fx:id="r6" fill="WHITE" height="66.0" layoutX="256.0" layoutY="17.0" stroke="WHITE" strokeType="INSIDE" width="91.0" />
-      <Label layoutX="19.0" layoutY="50.0" prefHeight="27.0" prefWidth="165.0" text="Generation" fx:id="genNumber"/>
+      <Label fx:id="genNumber" layoutX="19.0" layoutY="50.0" prefHeight="27.0" prefWidth="165.0" text="Generation" />
+      <Button layoutX="47.0" layoutY="158.0" mnemonicParsing="false" text="Go!!!" fx:id="goButton" onAction="#go"/>
    </children>
 </AnchorPane>

@@ -6,6 +6,8 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class AlgSquare {
+    int x, y;
+    String id;
     FXMLLoader loader;
     Parent root;
     Controller controller;
@@ -13,6 +15,7 @@ public class AlgSquare {
     public AlgSquare(int x, int y) throws IOException {
         loader = new FXMLLoader(getClass().getResource("/Maze.fxml"));
         root = loader.load();
+        controller = loader.getController();
         square = new Rectangle();
         square.setX(x);
         square.setY(y);
@@ -21,6 +24,8 @@ public class AlgSquare {
 
     }
     public void add(Controller controll) {
+        square.setId(this.toString());
+        id = square.getId();
         controll.anchorPane.getChildren().add(square);
     }
     public boolean isTouching() {
