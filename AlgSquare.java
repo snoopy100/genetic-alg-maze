@@ -27,6 +27,7 @@ public class AlgSquare {
         square.setId(this.toString());
         id = square.getId();
         controll.anchorPane.getChildren().add(square);
+        System.out.println(controll.anchorPane.getChildren().contains(square));
     }
     public boolean isTouching() {
         if (square.getBoundsInParent().intersects(controller.r1.getBoundsInParent())) {

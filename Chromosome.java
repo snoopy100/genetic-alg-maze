@@ -67,8 +67,11 @@ public class Chromosome {
             System.out.println("no");
             break;
           }
+          controll.anchorPane.setPrefWidth(Math.random() + 599.5);
       }
     }
-    controll.anchorPane.getChildren().remove(square.id);
+    System.out.println(controll.anchorPane.getPrefWidth());
+    System.out.println("yes");
+    controll.anchorPane.getChildren().remove(square);
   }
 }
