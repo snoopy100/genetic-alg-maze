@@ -1,5 +1,6 @@
 import javafx.scene.shape.Rectangle;
 
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -11,7 +12,7 @@ public class Chromosome {
   int y;
   AlgSquare square;
   private int fitness = 0;
-  public Chromosome(int genomeLength, int squareX, int squareY) {
+  public Chromosome(int genomeLength, int squareX, int squareY) throws IOException {
     x = squareX;
     y = squareY;
     square = new AlgSquare(x, y);

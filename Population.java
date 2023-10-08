@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.Arrays;
 
 public class Population {
@@ -7,7 +8,7 @@ public class Population {
     chromosomes = new Chromosome[popSize];
     genomeSize = length;
   }
-  public Population initPopulation() {
+  public Population initPopulation() throws IOException {
     for (int i = 0; i < chromosomes.length; i++) {
       chromosomes[i] = new Chromosome(genomeSize, 20, 350).initChromosome();
     }
