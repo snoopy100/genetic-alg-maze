@@ -13,7 +13,6 @@ public class AlgSquare {
     public AlgSquare(int x, int y) throws IOException {
         loader = new FXMLLoader(getClass().getResource("/Maze.fxml"));
         root = loader.load();
-        controller = loader.getController();
         square = new Rectangle();
         square.setX(x);
         square.setY(y);
@@ -21,11 +20,9 @@ public class AlgSquare {
         square.setWidth(10);
 
     }
-     /* ontroller.anchorPane.getChildren().add(square); is being run but nothing is happening
-     public void add() {
-        controller.anchorPane.getChildren().add(square);
-        System.out.println("hey babe");
-    } */
+    public void add(Controller controll) {
+        controll.anchorPane.getChildren().add(square);
+    }
     public boolean isTouching() {
         if (square.getBoundsInParent().intersects(controller.r1.getBoundsInParent())) {
             return true;

@@ -1,3 +1,4 @@
+import javafx.fxml.FXMLLoader;
 import javafx.scene.shape.Rectangle;
 
 import java.io.IOException;
@@ -6,7 +7,9 @@ import java.util.Random;
 
 public class Chromosome {
   static Random randNum = new Random();
-  private enum Actions {LEFT, UP, RIGHT, DOWN, WAIT}
+  public static enum Actions {
+    LEFT, UP, RIGHT, DOWN
+  }
   private Actions[] genes;
   int x;
   int y;
@@ -36,5 +39,16 @@ public class Chromosome {
   }
   public int calcFitness() {
     return (int) square.square.getY();
+  }
+  public void display() throws IOException {
+    square.add(new FXMLLoader(getClass().getResource("/Maze.fxml")).getController());
+    for (Actions i: genes) {
+      switch (i) {
+        case LEFT -> x--;
+        case RIGHT -> x++;
+        case UP -> y--;
+        case DOWN -> y++;
+      }
+    }
   }
 }

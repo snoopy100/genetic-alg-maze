@@ -6,24 +6,40 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.io.IOException;
+
 public class Main extends Application {
   @Override
   public void start(Stage stage) throws Exception {
     FXMLLoader loader = new FXMLLoader(getClass().getResource("/Maze.fxml"));
     Parent root = loader.load();
     Scene scene = new Scene(root);
-    /* for testing but not working
-    for (int i = 20; i < 50; i += 10) {
-      for (int j = 20; j < 380; j += 20) {
-        AlgSquare pepe = new AlgSquare(i, j);
-        pepe.add();
-      }
-    }*/
+    Controller controller = loader.getController();
     stage.setScene(scene);
     stage.setTitle("AI solving maze");
     stage.show();
+
+    Algorithim alg = new Algorithim(15);
+    Population pop = new Population(15, Algorithim.length).initPopulation();
+    pop.sortChromosomesByFitness();
+    while (pop.getChromosomes()[0].calcFitness() < 331) {
+      for (int i = 0; i < 15; i++) {
+        pop.getChromosomes()[i].display();
+      }
+      pop = alg.evolvePopulation(pop);
+    }
   }
-  public static void main(String[] args) {
+  public static void main(String[] args) throws IOException {
     launch(args);
+    /* code for running GA but it is not being run
+    Algorithim alg = new Algorithim(15);
+    Population pop = new Population(15, Algorithim.length).initPopulation();
+    pop.sortChromosomesByFitness();
+    while (pop.getChromosomes()[0].calcFitness() < 331) {
+      for (int i = 0; i < 15; i++) {
+        pop.getChromosomes()[i].display();
+      }
+      pop = alg.evolvePopulation(pop);
+    } */
   }
 }

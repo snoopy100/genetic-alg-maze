@@ -29,4 +29,9 @@ public class Population {
   public Chromosome[] getChromosomes() {
     return chromosomes;
   }
+  public void display() throws Exception {
+      for (Chromosome i : chromosomes) {
+          i.display();
+      }
+  }
 }
